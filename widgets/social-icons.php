@@ -12,7 +12,7 @@
  * http://www.gnu.org/licenses/gpl-3.0.txt
  */
 
-class GSW_Social extends WP_Widget {
+class WSG_Social extends WP_Widget {
 
 	function __construct() {
 		$widget_ops = array('classname' => 'widget_social', 'description' => __('Adds social icons with URLs included in Yoast SEO', 'bsc'));
@@ -124,4 +124,4 @@ class GSW_Social extends WP_Widget {
 
 /** Register sidebars by running twentyten_widgets_init() on the widgets_init hook. */
 
-add_action( 'widgets_init', create_function( '', 'register_widget( "GSW_Social" );' ) );
+add_action( 'widgets_init', create_function( '', 'register_widget( "WSG_Social" );' ) );

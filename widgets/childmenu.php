@@ -12,7 +12,7 @@
  * http://www.gnu.org/licenses/gpl-3.0.txt
  */
 
-class GSW_ChildMenu extends WP_Widget {
+class WSG_ChildMenu extends WP_Widget {
 
 	function __construct() {
 		$widget_ops = array('classname' => 'widget_childmenu', 'description' => __('It gives you a menu with child pages.', 'bsc'));
@@ -100,4 +100,4 @@ class GSW_ChildMenu extends WP_Widget {
 
 /** Register sidebars by running twentyten_widgets_init() on the widgets_init hook. */
 
-add_action( 'widgets_init', create_function( '', 'register_widget( "GSW_ChildMenu" );' ) );
+add_action( 'widgets_init', create_function( '', 'register_widget( "WSG_ChildMenu" );' ) );
