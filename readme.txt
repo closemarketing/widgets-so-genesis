@@ -1,4 +1,4 @@
-=== Genesis SO Widgets ===
+=== Widgets SO Genesis ===
 Contributors: closemarketing
 Tags: genesis,
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZYGC6AT5JFQVE
@@ -7,7 +7,7 @@ Tested up to: 4.4
 Stable tag: 1.2.3
 Version: 1.2.3
 
-This WordPress Widgets extends.
+Widgets for Page Builder SiteOrigin and Genesis Framework.
 
 == Description ==
 This plugin give you a bunch of widgets that allows you to draw content using Genesis and SiteOrigin Page Builder.
