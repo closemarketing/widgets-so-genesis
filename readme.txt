@@ -1,4 +1,4 @@
-=== PageBuilder Widgets for Genesis Framework ===
+=== Genesis SO Widgets ===
 Contributors: closemarketing
 Tags: genesis,
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZYGC6AT5JFQVE
@@ -10,9 +10,8 @@ Version: 1.2.3
 This WordPress Widgets extends.
 
 == Description ==
-This plugin give you a bunch of shortcodes that allows you to draw content using Bootstrap CSS and HTML.
+This plugin give you a bunch of widgets that allows you to draw content using Genesis and SiteOrigin Page Builder.
 
-[Official Repository Github](https://github.com/closemarketing/bootstrap-shortcodes-for-content) . Fork and add make suggestions to the plugin!
 
 Others Plugins:
 - [Gravity Forms CRM Addon](http://codecanyon.net/item/gravity-forms-crm-addon/10521695)

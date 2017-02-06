@@ -13,6 +13,5 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 */
 
 //Widgets
-require_once( dirname(__FILE__) . '/widgets/button.php'); // Call to Action
-require_once( dirname(__FILE__) . '/widgets/social-icons.php'); // Recent Posts
+require_once( dirname(__FILE__) . '/widgets/social-icons.php'); // Social Icons
 require_once( dirname(__FILE__) . '/widgets/childmenu.php'); // Child Menu
