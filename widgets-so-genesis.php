@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: SiteOrigin Widgets for Genesis Frameworks
+Plugin Name: Widgets for Page Builder SiteOrigin and Genesis Framework
 Plugin URI: https://github.com/closemarketing/genesis-so-widgets
 Description: Widgets Page Builder SiteOrigin for Genesis Framework
 Author: closemarketing
