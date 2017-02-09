@@ -23,14 +23,12 @@ class WSG_Button extends WP_Widget {
     function widget( $args, $instance ) {
         extract($args);
         $buttontext = apply_filters( 'widget_buttontext', empty( $instance['buttontext'] ) ? '' : $instance['buttontext'], $instance );
-        $buttonsize = apply_filters( 'widget_buttonsize', empty( $instance['buttonsize'] ) ? '' : $instance['buttonsize'], $instance );
         $buttonstyle = apply_filters( 'widget_buttonstyle', empty( $instance['buttonstyle'] ) ? '' : $instance['buttonstyle'], $instance );
         $buttonurl = apply_filters( 'widget_buttonurl', empty( $instance['buttonurl'] ) ? '' : $instance['buttonurl'], $instance );
         echo $before_widget; ?>
 
             <div class="ctabutton">
                 <a class="button<?php
-                    if ( !empty( $buttonsize ) ) { echo " ".$buttonsize;  }
                     if ( !empty( $buttonstyle ) ) { echo " ".$buttonstyle;  }
             ?>" href="<?php echo $buttonurl; ?>"><?php echo $buttontext; ?></a>
             </div>
@@ -43,7 +41,6 @@ class WSG_Button extends WP_Widget {
 
         $instance['buttontext'] =  $new_instance['buttontext'];
         $instance['buttonurl'] =  $new_instance['buttonurl'];
-        $instance['buttonsize'] =  $new_instance['buttonsize'];
         $instance['buttonstyle'] =  $new_instance['buttonstyle'];
 
         $instance['filter'] = isset($new_instance['filter']);
@@ -52,10 +49,9 @@ class WSG_Button extends WP_Widget {
 
     function form( $instance ) {
         $instance = wp_parse_args( (array) $instance,
-                        array( 'buttontext' => '', 'buttonurl' => '', 'buttonsize' => '' , 'buttonstyle' => '' ) );
+                        array( 'buttontext' => '', 'buttonurl' => '', 'buttonstyle' => '' ) );
         $buttontext = esc_textarea($instance['buttontext']);
         $buttonurl = esc_textarea($instance['buttonurl']);
-        $buttonsize = esc_textarea($instance['buttonsize']);
         $buttonstyle = esc_textarea($instance['buttonstyle']);
 ?>
         <p>
@@ -68,67 +64,8 @@ class WSG_Button extends WP_Widget {
         </p>
 
         <p>
-            <label for="<?php echo $this->get_field_id( 'buttonsize' ); ?> ">
-                <?php _e('Button Size', 'widgets-so-genesis'); ?>:
-            </label>
-            <select id="<?php echo $this->get_field_id( 'buttonsize' ); ?>" name="<?php echo $this->get_field_name( 'buttonsize' ); ?>">
-                <option value="btn-lg" <?php
-                    if($instance['buttonsize'] == "btn-lg")
-                        echo 'selected="selected"';
-                ?>><?php _e('Large','widgets-so-genesis');?></option>
-
-                <option value="btn-md" <?php
-                    if($instance['buttonsize'] == "btn-md")
-                        echo 'selected="selected"';
-                ?>><?php _e('Medium','widgets-so-genesis');?></option>
-
-                <option value="btn-sm" <?php
-                    if($instance['buttonsize'] == "btn-sm")
-                        echo 'selected="selected"';
-                ?>><?php _e('Small','widgets-so-genesis');?></option>
-
-                <option value="btn-xs" <?php
-                    if($instance['buttonsize'] == "btn-xs")
-                        echo 'selected="selected"';
-                ?>><?php _e('Extra Small','widgets-so-genesis');?></option>
-            </select>
-        </p>
-
-        <p>
-            <label for="<?php echo $this->get_field_id( 'buttonstyle' ); ?> ">
-                <?php _e('Button Style', 'widgets-so-genesis'); ?>:
-            </label>
-            <select id="<?php echo $this->get_field_id( 'buttonstyle' ); ?>" name="<?php echo $this->get_field_name( 'buttonstyle' ); ?>">
-                <option value="btn-default" <?php
-                    if($instance['buttonstyle'] == "btn-default")
-                        echo 'selected="selected"';
-                ?>><?php _e('Default','widgets-so-genesis');?></option>
-
-                <option value="btn-primary" <?php
-                    if($instance['buttonstyle'] == "btn-primary")
-                        echo 'selected="selected"';
-                ?>><?php _e('Primary','widgets-so-genesis');?></option>
-
-                <option value="btn-success" <?php
-                    if($instance['buttonstyle'] == "btn-success")
-                        echo 'selected="selected"';
-                ?>><?php _e('Success','widgets-so-genesis');?></option>
-
-                <option value="btn-info" <?php
-                    if($instance['buttonstyle'] == "btn-info")
-                        echo 'selected="selected"';
-                ?>><?php _e('Info','widgets-so-genesis');?></option>
-
-                <option value="btn-warning" <?php
-                    if($instance['buttonstyle'] == "btn-warning")
-                        echo 'selected="selected"';
-                ?>><?php _e('Warning','widgets-so-genesis');?></option>
-
-                <option value="btn-danger" <?php
-                    if($instance['buttonstyle'] == "btn-danger")
-                        echo 'selected="selected"';
-                ?>><?php _e('Danger','widgets-so-genesis');?></option>
-            </select>
+            <label for="<?php echo $this->get_field_id('buttonstyle'); ?>"><?php _e('Button Custom class','widgets-so-genesis'); ?>:</label>
+        <input class="widefat" id="<?php echo $this->get_field_id('buttonstyle'); ?>" name="<?php echo $this->get_field_name('buttonstyle'); ?>" type="text" value="<?php echo esc_attr($buttonstyle); ?>" />
         </p>
 
         <?php
