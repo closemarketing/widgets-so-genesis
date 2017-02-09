@@ -15,9 +15,9 @@
 class WSG_Contact_Info extends WP_Widget {
 
     function __construct() {
-        $widget_ops = array('classname' => 'widget_contact', 'description' => __('Adds contact info in a widget.', 'widgets-so-genesis'));
+        $widget_ops = array('classname' => 'widget_contact', 'description' => __('Adds contact info in a widget.', 'bootstrap-shortcodes-for-content'));
         $control_ops = array('width' => 400, 'height' => 350);
-        parent::__construct('contact_widget', __('Contact Info','widgets-so-genesis'), $widget_ops, $control_ops);
+        parent::__construct('contact_widget', __('Contact Info','bootstrap-shortcodes-for-content'), $widget_ops, $control_ops);
     }
 
     function widget( $args, $instance ) {
@@ -54,11 +54,11 @@ class WSG_Contact_Info extends WP_Widget {
               <?php } ?>
               <?php if($contact_phone) { ?>
                   <i class="fa fa-phone-square"></i>
-                  <?php _e('Phone','widgets-so-genesis');?>: <span itemprop="telephone"><?php echo $contact_phone; ?></span><br/>
+                  <?php _e('Phone','bootstrap-shortcodes-for-content');?>: <span itemprop="telephone"><?php echo $contact_phone; ?></span><br/>
               <?php } ?>
               <?php if($contact_email) { ?>
               <i class="fa fa-envelope-o"></i>
-              <?php _e('E-mail','widgets-so-genesis');?>:
+              <?php _e('E-mail','bootstrap-shortcodes-for-content');?>:
               <a href="mailto:<?php echo $contact_email; ?>">
                 <span itemprop="email"><?php echo $contact_email; ?></span>
               </a>
@@ -109,47 +109,47 @@ class WSG_Contact_Info extends WP_Widget {
         $contact_desc = esc_textarea($instance['contact_desc']);
 ?>
         <p>
-            <label for="<?php echo $this->get_field_id('contact_company'); ?>"><?php _e('Contact Name','widgets-so-genesis'); ?>:</label>
+            <label for="<?php echo $this->get_field_id('contact_company'); ?>"><?php _e('Contact Name','bootstrap-shortcodes-for-content'); ?>:</label>
             <input class="widefat" id="<?php echo $this->get_field_id('contact_company'); ?>" name="<?php echo $this->get_field_name('contact_company'); ?>" type="text" value="<?php echo esc_attr($contact_company); ?>" />
         </p>
 
         <p>
-            <label for="<?php echo $this->get_field_id('contact_dir1'); ?>"><?php _e('Address info 1','widgets-so-genesis'); ?>:</label>
+            <label for="<?php echo $this->get_field_id('contact_dir1'); ?>"><?php _e('Address info 1','bootstrap-shortcodes-for-content'); ?>:</label>
         <input class="widefat" id="<?php echo $this->get_field_id('contact_dir1'); ?>" name="<?php echo $this->get_field_name('contact_dir1'); ?>" type="text" value="<?php echo esc_attr($contact_dir1); ?>" />
         </p>
 
         <p>
-            <label for="<?php echo $this->get_field_id('contact_dir2'); ?>"><?php _e('Address info 2','widgets-so-genesis'); ?>:</label>
+            <label for="<?php echo $this->get_field_id('contact_dir2'); ?>"><?php _e('Address info 2','bootstrap-shortcodes-for-content'); ?>:</label>
         <input class="widefat" id="<?php echo $this->get_field_id('contact_dir2'); ?>" name="<?php echo $this->get_field_name('contact_dir2'); ?>" type="text" value="<?php echo esc_attr($contact_dir2); ?>" />
         </p>
 
         <p>
-            <label for="<?php echo $this->get_field_id('contact_zip'); ?>"><?php _e('ZIP','widgets-so-genesis'); ?>:</label>
+            <label for="<?php echo $this->get_field_id('contact_zip'); ?>"><?php _e('ZIP','bootstrap-shortcodes-for-content'); ?>:</label>
         <input class="widefat" id="<?php echo $this->get_field_id('contact_zip'); ?>" name="<?php echo $this->get_field_name('contact_zip'); ?>" type="text" value="<?php echo esc_attr($contact_zip); ?>" />
         </p>
 
         <p>
-            <label for="<?php echo $this->get_field_id('contact_city'); ?>"><?php _e('City','widgets-so-genesis'); ?>:</label>
+            <label for="<?php echo $this->get_field_id('contact_city'); ?>"><?php _e('City','bootstrap-shortcodes-for-content'); ?>:</label>
         <input class="widefat" id="<?php echo $this->get_field_id('contact_city'); ?>" name="<?php echo $this->get_field_name('contact_city'); ?>" type="text" value="<?php echo esc_attr($contact_city); ?>" />
         </p>
 
         <p>
-            <label for="<?php echo $this->get_field_id('contact_state'); ?>"><?php _e('State','widgets-so-genesis'); ?>:</label>
+            <label for="<?php echo $this->get_field_id('contact_state'); ?>"><?php _e('State','bootstrap-shortcodes-for-content'); ?>:</label>
         <input class="widefat" id="<?php echo $this->get_field_id('contact_state'); ?>" name="<?php echo $this->get_field_name('contact_state'); ?>" type="text" value="<?php echo esc_attr($contact_state); ?>" />
         </p>
 
         <p>
-            <label for="<?php echo $this->get_field_id('contact_phone'); ?>"><?php _e('Phone','widgets-so-genesis'); ?>:</label>
+            <label for="<?php echo $this->get_field_id('contact_phone'); ?>"><?php _e('Phone','bootstrap-shortcodes-for-content'); ?>:</label>
         <input class="widefat" id="<?php echo $this->get_field_id('contact_phone'); ?>" name="<?php echo $this->get_field_name('contact_phone'); ?>" type="text" value="<?php echo esc_attr($contact_phone); ?>" />
         </p>
 
         <p>
-            <label for="<?php echo $this->get_field_id('contact_email'); ?>"><?php _e('Email','widgets-so-genesis'); ?>:</label>
+            <label for="<?php echo $this->get_field_id('contact_email'); ?>"><?php _e('Email','bootstrap-shortcodes-for-content'); ?>:</label>
         <input class="widefat" id="<?php echo $this->get_field_id('contact_email'); ?>" name="<?php echo $this->get_field_name('contact_email'); ?>" type="text" value="<?php echo esc_attr($contact_email); ?>" />
         </p>
 
         <p>
-            <label for="<?php echo $this->get_field_id('contact_desc'); ?>"><?php _e('Contact Description','widgets-so-genesis'); ?>:</label>
+            <label for="<?php echo $this->get_field_id('contact_desc'); ?>"><?php _e('Contact Description','bootstrap-shortcodes-for-content'); ?>:</label>
         <textarea class="widefat" rows="5" cols="20" id="<?php echo $this->get_field_id('contact_desc'); ?>" name="<?php echo $this->get_field_name('contact_desc'); ?>"><?php echo $contact_desc; ?></textarea>
         </p>
 
