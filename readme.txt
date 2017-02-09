@@ -1,16 +1,21 @@
 === Widgets SO Genesis ===
-Contributors: closemarketing
-Tags: genesis,
+Contributors: closemarketing, davidperez
+Tags: genesis, widgets
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZYGC6AT5JFQVE
 Requires at least: 3.0
-Tested up to: 4.4
-Stable tag: 0.1
-Version: 0.1
+Tested up to: 4.7.2
+Stable tag: 0.2
+Version: 0.2
 
 Widgets for Page Builder SiteOrigin and Genesis Framework.
 
 == Description ==
 This plugin give you a bunch of widgets that allows you to draw content using Genesis and SiteOrigin Page Builder.
+
+Widgets included in this plugin:
+- Social Icons.
+- Contact information.
+- Child menu for pages. Shows child pages in sidebar in active page.
 
 
 Others Plugins:
@@ -31,6 +36,9 @@ WordPress installation and then activate the Plugin from Plugins page.
 [Official Repository Github](https://github.com/closemarketing/bootstrap-shortcodes-for-content)
 
 == Changelog ==
+= 0.2.0 =
+*   Format changes.
+
 = 0.1.0 =
 *	First released.
 
