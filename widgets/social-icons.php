@@ -14,19 +14,19 @@
 
 class WSG_Social extends WP_Widget {
 
-    function __construct() {
-        $widget_ops = array('classname' => 'widget_social', 'description' => __('Adds social icons with URLs included in Yoast SEO', 'bsc'));
-        $control_ops = array('width' => 400, 'height' => 350);
-        parent::__construct('socialtext', __('Social Icons','widgets-so-genesis'), $widget_ops, $control_ops);
-    }
+	function __construct() {
+		$widget_ops = array('classname' => 'widget_social', 'description' => __('Adds social icons with URLs included in Yoast SEO', 'bsc'));
+		$control_ops = array('width' => 400, 'height' => 350);
+		parent::__construct('socialtext', __('Social Icons','widgets-so-genesis'), $widget_ops, $control_ops);
+	}
 
-    function widget( $args, $instance ) {
-        extract($args);
-        $iconsize = apply_filters( 'widget_iconsize', empty( $instance['iconsize'] ) ? '' : $instance['iconsize'], $instance );
-        $iconstyle = apply_filters( 'widget_iconstyle', empty( $instance['iconstyle'] ) ? '' : $instance['iconstyle'], $instance );
+	function widget( $args, $instance ) {
+		extract($args);
+		$iconsize = apply_filters( 'widget_iconsize', empty( $instance['iconsize'] ) ? '' : $instance['iconsize'], $instance );
+		$iconstyle = apply_filters( 'widget_iconstyle', empty( $instance['iconstyle'] ) ? '' : $instance['iconstyle'], $instance );
         if(isset($instance['title'])) $title =$instance['title']; else $title = '';
 
-        echo $before_widget; 
+		echo $before_widget; 
         
         $wpseo_social = get_option('wpseo_social'); 
         
@@ -47,19 +47,19 @@ class WSG_Social extends WP_Widget {
         if($wpseo_social['pinterest_url'])
             echo '<a href="'.$wpseo_social['pinterest_url'].'"><i class="fa '.$iconsize.' fa-pinterest'.$iconstyle.'" rel="nofollow"></i></a>';
 
-        echo $after_widget;
-    }
+		echo $after_widget;
+	}
 
-    function update( $new_instance, $old_instance ) {
-        $instance = $old_instance;
+	function update( $new_instance, $old_instance ) {
+		$instance = $old_instance;
         $instance['title'] =  $new_instance['title'];
         $instance['iconsize'] =  $new_instance['iconsize'];
         $instance['iconstyle'] =  $new_instance['iconstyle'];
-        $instance['filter'] = isset($new_instance['filter']);
-        return $instance;
-    }
+		$instance['filter'] = isset($new_instance['filter']);
+		return $instance;
+	}
 
-    function form( $instance ) {
+	function form( $instance ) {
         $instance = wp_parse_args( (array) $instance, array( 'iconsize' => '' , 'iconstyle' => '', 'title' =>'' ) );
         $title = esc_attr($instance['title']);
         $iconsize = esc_textarea($instance['iconsize']);
@@ -122,8 +122,8 @@ class WSG_Social extends WP_Widget {
             </select>
         </p>
 
-        <?php
-        }
+		<?php
+		}
 } //from class
 
 
