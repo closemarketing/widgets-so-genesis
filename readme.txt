@@ -4,8 +4,8 @@ Tags: genesis,
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZYGC6AT5JFQVE
 Requires at least: 3.0
 Tested up to: 4.4
-Stable tag: 1.2.3
-Version: 1.2.3
+Stable tag: 0.1
+Version: 0.1
 
 Widgets for Page Builder SiteOrigin and Genesis Framework.
 
