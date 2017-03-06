@@ -91,14 +91,14 @@ class widget_woocatimg extends WP_Widget {
         $i = 1;
         foreach($catTerms as $catTerm) : 
                $wthumbnail_id = get_woocommerce_term_meta( $catTerm->term_id,'thumbnail_id', true );
-               $wimage = wp_get_attachment_url( $wthumbnail_id );
+               $wimage = wp_get_attachment_image( $wthumbnail_id, 'shop_catalog' );
         
         if($title) echo '<h2 class="widget-title">'.$title.'</h2>';
         ?>
 
         <div class="item <?php echo 'one-'.$select; if($i==1) { echo ' first'; $i++; } else { $i++; }?>">
             <a href="<?php echo esc_url( get_term_link( $catTerm ) ); ?>">
-                <?php if($wimage!=""):?><img src="<?php echo $wimage?>" /><?php endif;?>
+                <?php if($wimage!=""):?><?php echo $wimage; ?><?php endif;?>
             </a>
             <h3 class="title">
                 <a href="<?php echo $catTerm->slug; ?>"><?php echo $catTerm->name; ?></a>
