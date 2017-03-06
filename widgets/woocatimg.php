@@ -80,7 +80,13 @@ class widget_woocatimg extends WP_Widget {
         echo $before_widget;
         $title = apply_filters('widget_title', $instance['title']);
         $select = $instance['select'];
-        $catTerms = get_terms('product_cat', array('hide_empty' => 0, 'orderby' => 'ASC' ));
+        $args_terms = array(
+          'hide_empty' => 0, 
+          'orderby' => 'ASC',
+          'parent' => 0,
+          );
+
+        $catTerms = get_terms('product_cat', $args_terms);
 
         $i = 1;
         foreach($catTerms as $catTerm) : 
@@ -91,7 +97,7 @@ class widget_woocatimg extends WP_Widget {
         ?>
 
         <div class="item <?php echo 'one-'.$select; if($i==1) { echo ' first'; $i++; } else { $i++; }?>">
-            <a href="<?php echo $catTerm->slug; ?>">
+            <a href="<?php echo esc_url( get_term_link( $catTerm ) ); ?>">
                 <?php if($wimage!=""):?><img src="<?php echo $wimage?>" /><?php endif;?>
             </a>
             <h3 class="title">
