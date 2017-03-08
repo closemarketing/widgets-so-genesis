@@ -1,25 +1,26 @@
 <?php
 /*
-Widget Name: WooCommerce Category Image in a genesis grid
-Description: Shows the category woocommerce in a grid.
+Widget Name: Images Category for Woocommerce
+Description: Shows categories from Woocommerce.
 Author: davidperez
 Author URI: https://www.closemarketing.es
 */
-function widget_latestimgposts() {
-    register_widget( 'widget_latestimgposts' );
+function widget_woocatimg() {
+    register_widget( 'widget_woocatimg' );
 }
-add_action( 'widgets_init', 'widget_latestimgposts' );
+add_action( 'widgets_init', 'widget_woocatimg' );
 
-class widget_latestimgposts extends WP_Widget {
+class widget_woocatimg extends WP_Widget {
 
     // CONSTRUCT WIDGET
     function __construct() {
         $widget_ops = array(
-            'classname'     => 'widget_latestimgposts',
-            'description' => __('Latest Posts with image','widgets-so-genesis'),
+            'classname'     => 'widget_woocatimg',
+            'description' => 'Images Category for Woocommerce',
             'panels_icon' => 'dashicons dashicons-layout',
         );
-        parent::__construct( 'widget_latestimgposts', __('Shows the latest posts with thumbnail','widgets-so-genesis'), $widget_ops );
+        if ( class_exists( 'WooCommerce' ) )  //activates if woocommerce is present
+            parent::__construct( 'widget_woocatimg', __('Shows parent categories from Woocommerce','widgets-so-genesis'), $widget_ops );
     }
 
     // CREATE WIDGET FORM (WORDPRESS DASHBOARD)
@@ -29,16 +30,47 @@ class widget_latestimgposts extends WP_Widget {
       // Check values
       if( $instance) {
            $title = esc_attr($instance['title']);
+           $select = esc_attr($instance['select']); // Added
+           $select_imgsize = esc_attr($instance['select_imgsize']); // Added
       } else {
            $title = '';
+           $select_imgsize = ''; // Added
+           $select = ''; // Added
       }
       ?>
 
       <p>
           <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Widget Title', 'widgets-so-genesis'); ?></label>
-          <input id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" style="width:100%" />
+          <input id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" style="width:100%;" />
       </p>
 
+      <p>
+      <label for="<?php echo $this->get_field_id('select'); ?>"><?php _e('Genesis Columns', 'widgets-so-genesis'); ?></label>
+          <select name="<?php echo $this->get_field_name('select'); ?>" id="<?php echo $this->get_field_id('select'); ?>" class="widefat">
+          <?php
+          $options = array(
+                        'half' => __('2 Columns', 'widgets-so-genesis'), 
+                        'third' => __('3 Columns', 'widgets-so-genesis'), 
+                        'fourth' => __('4 Columns', 'widgets-so-genesis')
+            );
+          foreach ($options as $key => $option) {
+          echo '<option value="' . $key . '" id="' . $key . '"', $select == $option ? ' selected="selected"' : '', '>', $option, '</option>';
+          }
+          ?>
+          </select>
+      </p>
+
+      <p>
+      <label for="<?php echo $this->get_field_id('select_imgsize'); ?>"><?php _e('Image', 'widgets-so-genesis'); ?></label>
+          <select name="<?php echo $this->get_field_name('select_imgsize'); ?>" id="<?php echo $this->get_field_id('select_imgsize'); ?>" class="widefat">
+          <?php
+          $options_imgsize = get_intermediate_image_sizes();
+          foreach ($options_imgsize as $optionim) {
+          echo '<option value="' . $optionim . '" id="' . $optionim . '"', $select == $option ? ' selected="selected"' : '', '>', $optionim, '</option>';
+          }
+          ?>
+          </select>
+      </p>
   <?php
   }
 
@@ -48,6 +80,8 @@ class widget_latestimgposts extends WP_Widget {
     $instance = $old_instance;
     // Fields
     $instance['title'] = strip_tags($new_instance['title']);
+    $instance['select'] = strip_tags($new_instance['select']);
+    $instance['select_imgsize'] = strip_tags($new_instance['select_imgsize']);
     return $instance;
 
   }
@@ -59,46 +93,42 @@ class widget_latestimgposts extends WP_Widget {
 
         // Widget starts to print information
         echo $before_widget;
-        if(isset($instance['title'])) $title = apply_filters('widget_title', $instance['title']); else $title='';
+        $title = apply_filters('widget_title', $instance['title']);
+        $select = $instance['select'];
+        $select_imgsize = $instance['select_imgsize'];
+        $args_terms = array(
+          'hide_empty' => 0, 
+          'orderby' => 'ASC',
+          'parent' => 0,
+          );
+
+        $catTerms = get_terms('product_cat', $args_terms);
+
+        $i = 1;
+        foreach($catTerms as $catTerm) : 
+               $wthumbnail_id = get_woocommerce_term_meta( $catTerm->term_id,'thumbnail_id', true );
+               $wimage = wp_get_attachment_image( $wthumbnail_id, $select_imgsize );
+        
+        if($title) echo '<h2 class="widget-title">'.$title.'</h2>';
         ?>
 
-        <?php 
-        if($title) 
-            echo '<h2 class="widget-title">'.esc_html($instance['title']).'</h2>';
-
-        $args_posts = array(
-                'post_type' => 'post',
-                'posts_per_page' => 3,
-                'orderby' => 'date',
-                'order' => 'DESC',
-        );
-
-        $latestposts = new WP_Query( $args_posts );
-
-        if ( $latestposts->have_posts() ) :
-        $i =1;
-        while ( $latestposts->have_posts() ) : $latestposts->the_post();    ?>
-            <div class="one-third item <?php if($i==1) { echo ' first'; $i++; } else { $i++; } ?>">
-               <div class="thumbnails">
-                   <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
-                   <?php the_post_thumbnail( 'thumbnail' ); ?>
-                    </a>
-               </div>
-               <div class="title">
-                   <h3><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title();?></a></h3><?php the_excerpt(); ?>
-               </div>
-            </div>
+        <div class="item <?php echo 'one-'.$select; if($i==1) { echo ' first'; $i++; } else { $i++; }?>">
+            <a href="<?php echo esc_url( get_term_link( $catTerm ) ); ?>">
+                <?php if($wimage!=""):?><?php echo $wimage; ?><?php endif;?>
+            </a>
+            <h3 class="title">
+                <a href="<?php echo $catTerm->slug; ?>"><?php echo $catTerm->name; ?></a>
+            </h3>
+        </div>
         <?php
-        if($i>3) $i = 1;
-        endwhile;
-        wp_reset_postdata();
-        endif;
-        ?>
+        if($select=='half'&&$i>2) $i = 1;
+        elseif($select=='third'&&$i>3) $i = 1;
+        elseif($select=='fourth'&&$i>4) $i = 1;
 
-        <?php
+        endforeach; 
+
         // Widget ends printing information
         echo $after_widget;
-
   }
 
 }
