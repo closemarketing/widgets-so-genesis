@@ -4,8 +4,8 @@ Tags: genesis, widgets
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZYGC6AT5JFQVE
 Requires at least: 4.0
 Tested up to: 4.7.2
-Stable tag: 0.3
-Version: 0.3
+Stable tag: 0.4
+Version: 0.4
 
 Widgets for Page Builder SiteOrigin and Genesis Framework.
 
@@ -20,7 +20,7 @@ Widgets included in this plugin:
 -   Contact information.
 -   Child menu for pages. Shows child pages in sidebar in active page.
 -   Button for CTA with Genesis css classes.
--   WooCommerce Category Image in a grid.
+-   WooCommerce Category Image in a genesis grid.
 
 
 Others Plugins:
