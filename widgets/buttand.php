@@ -59,9 +59,10 @@ class widget_band extends WP_Widget {
         // Widget starts to print information
         echo $before_widget;
         $url = $instance['url'];
+        $locale = substr(get_locale(), 0, 2);
         ?>
 
-        <div class="btn-app-store-element"><a class="btn-app-store" href="<?php echo $url;?>" target="_blank"><img src="<?php echo plugin_dir_url( __FILE__ );?>images/playstore-<?php echo get_locale();?>.png" width="160" height="50" /></a></div>
+        <div class="btn-app-store-element"><a class="btn-app-store" href="<?php echo $url;?>" target="_blank"><img src="<?php echo plugin_dir_url( __FILE__ );?>images/playstore-<?php echo $locale;?>.png" width="160" height="50" /></a></div>
 
         <?php
         // Widget ends printing information

@@ -4,8 +4,8 @@ Tags: genesis, widgets
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZYGC6AT5JFQVE
 Requires at least: 4.0
 Tested up to: 4.7.2
-Stable tag: 0.4
-Version: 0.4
+Stable tag: 0.5
+Version: 0.5
 
 Widgets for Page Builder SiteOrigin and Genesis Framework.
 
@@ -21,6 +21,7 @@ Widgets included in this plugin:
 -   Child menu for pages. Shows child pages in sidebar in active page.
 -   Button for CTA with Genesis css classes.
 -   WooCommerce Category Image in a genesis grid.
+-   Buttons for iOS apps and Android Apps.
 
 
 Others Plugins:
@@ -45,6 +46,9 @@ WordPress installation and then activate the Plugin from Plugins page.
 [Official Repository Github](https://github.com/closemarketing/widgets-so-genesis)
 
 == Changelog ==
+= 0.5 =
+*   Added Buttons for iOS apps and Android Apps.
+
 = 0.2 =
 *   Format changes.
 

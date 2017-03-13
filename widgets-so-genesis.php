@@ -5,7 +5,7 @@ Plugin URI: https://github.com/closemarketing/genesis-so-widgets
 Description: Widgets Page Builder SiteOrigin for Genesis Framework
 Author: closemarketing
 Author URI: https://www.closemarketing.es
-Version: 0.4
+Version: 0.5
 Text Domain: widgets-so-genesis
 Domain Path: /languages
 License: GNU General Public License version 3.0
