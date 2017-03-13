@@ -22,3 +22,5 @@ require_once( dirname(__FILE__) . '/widgets/contactinfo.php'); // Contact info
 require_once( dirname(__FILE__) . '/widgets/latestimgposts.php'); // Latest posts with image
 require_once( dirname(__FILE__) . '/widgets/buttoncta.php'); // Button CTA for genesis
 require_once( dirname(__FILE__) . '/widgets/woocatimg.php'); // WooCommerce Category Image
+require_once( dirname(__FILE__) . '/widgets/buttios.php'); // Button Download ios
+require_once( dirname(__FILE__) . '/widgets/buttand.php'); // Button Download Android
