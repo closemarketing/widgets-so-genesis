@@ -59,9 +59,10 @@ class widget_bios extends WP_Widget {
         // Widget starts to print information
         echo $before_widget;
         $url = $instance['url'];
+        $locale = substr(get_locale(), 0, 2);
         ?>
 
-        <div class="btn-app-store-element"><a class="btn-app-store" href="<?php echo $url;?>" target="_blank"><img src="<?php echo plugin_dir_url( __FILE__ );?>images/appstore-<?php echo get_locale();?>.png"/></a></div>
+        <div class="btn-app-store-element"><a class="btn-app-store" href="<?php echo $url;?>" target="_blank"><img src="<?php echo plugin_dir_url( __FILE__ );?>images/appstore-<?php echo $locale;?>.png"/></a></div>
 
         <?php
         // Widget ends printing information
