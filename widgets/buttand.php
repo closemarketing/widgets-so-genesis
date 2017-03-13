@@ -34,8 +34,8 @@ class widget_band extends WP_Widget {
       }
       ?>
       <p>
-          <label for="<?php echo $this->get_field_id('text'); ?>"><?php _e('URL Playstore Download App:', 'widgets-so-genesis'); ?></label>
-          <input id="<?php echo $this->get_field_id('text'); ?>" name="<?php echo $this->get_field_name('text'); ?>" type="text" value="<?php echo $text; ?>" style="width:100%"/>
+          <label for="<?php echo $this->get_field_id('url'); ?>"><?php _e('URL Playstore Download App:', 'widgets-so-genesis'); ?></label>
+          <input id="<?php echo $this->get_field_id('url'); ?>" name="<?php echo $this->get_field_name('url'); ?>" type="text" value="<?php echo $url ?>" style="width:100%"/>
       </p>
 
   <?php
