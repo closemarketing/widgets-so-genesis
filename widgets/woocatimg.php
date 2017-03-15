@@ -6,6 +6,7 @@ Author: davidperez
 Author URI: https://www.closemarketing.es
 */
 function widget_woocatimg() {
+  if ( class_exists( 'WooCommerce' ) )  //activates if woocommerce is present
     register_widget( 'widget_woocatimg' );
 }
 add_action( 'widgets_init', 'widget_woocatimg' );
@@ -16,11 +17,10 @@ class widget_woocatimg extends WP_Widget {
     function __construct() {
         $widget_ops = array(
             'classname'     => 'widget_woocatimg',
-            'description' => 'Images Category for Woocommerce',
+            'description' => __('Images Category for Woocommerce','widgets-so-genesis'),
             'panels_icon' => 'dashicons dashicons-layout',
         );
-        if ( class_exists( 'WooCommerce' ) )  //activates if woocommerce is present
-            parent::__construct( 'widget_woocatimg', __('Shows parent categories from Woocommerce','widgets-so-genesis'), $widget_ops );
+        parent::__construct( 'widget_woocatimg', __('Shows parent categories from Woocommerce','widgets-so-genesis'), $widget_ops );
     }
 
     // CREATE WIDGET FORM (WORDPRESS DASHBOARD)
