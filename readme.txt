@@ -4,8 +4,8 @@ Tags: genesis, widgets
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZYGC6AT5JFQVE
 Requires at least: 4.0
 Tested up to: 4.7.2
-Stable tag: 0.5
-Version: 0.5
+Stable tag: 0.5.1
+Version: 0.5.1
 
 Widgets for Page Builder SiteOrigin and Genesis Framework.
 
@@ -46,6 +46,9 @@ WordPress installation and then activate the Plugin from Plugins page.
 [Official Repository Github](https://github.com/closemarketing/widgets-so-genesis)
 
 == Changelog ==
+= 0.5.1 =
+*   Solved fatal error without Woocommercer present.
+
 = 0.5 =
 *   Added Buttons for iOS apps and Android Apps.
 
