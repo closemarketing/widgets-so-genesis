@@ -3,9 +3,9 @@ Contributors: closemarketing, davidperez
 Tags: genesis, widgets
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZYGC6AT5JFQVE
 Requires at least: 4.0
-Tested up to: 4.7.2
-Stable tag: 0.5.1
-Version: 0.5.1
+Tested up to: 4.7.3
+Stable tag: 0.6
+Version: 0.6
 
 Widgets for Page Builder SiteOrigin and Genesis Framework.
 
@@ -22,6 +22,7 @@ Widgets included in this plugin:
 -   Button for CTA with Genesis css classes.
 -   WooCommerce Category Image in a genesis grid.
 -   Buttons for iOS apps and Android Apps.
+-   Youtube and third party embed video.
 
 
 Others Plugins:
@@ -46,6 +47,9 @@ WordPress installation and then activate the Plugin from Plugins page.
 [Official Repository Github](https://github.com/closemarketing/widgets-so-genesis)
 
 == Changelog ==
+= 0.6 =
+*   New widget to insert videos from youtube/vimeo.
+
 = 0.5.1 =
 *   Solved fatal error without Woocommercer present.
 
