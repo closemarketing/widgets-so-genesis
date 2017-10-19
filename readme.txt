@@ -3,9 +3,9 @@ Contributors: closemarketing, davidperez, afortunato
 Tags: genesis, widgets
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZYGC6AT5JFQVE
 Requires at least: 4.0
-Tested up to: 4.8.1
-Stable tag: 0.7.1
-Version: 0.7.1
+Tested up to: 4.8.2
+Stable tag: 0.7
+Version: 0.7
 
 Widgets for Page Builder SiteOrigin and Genesis Framework.
 
@@ -47,11 +47,11 @@ WordPress installation and then activate the Plugin from Plugins page.
 [Official Repository Github](https://github.com/closemarketing/widgets-so-genesis)
 
 == Changelog ==
-= 0.7.1 =
-*   Some strings not translatable.
 
 = 0.7 =
 *   More options for widgets with image.
+*   Some strings not translatable.
+*   Make button with target option.
 
 = 0.6 =
 *   New widget to insert videos from youtube/vimeo.
