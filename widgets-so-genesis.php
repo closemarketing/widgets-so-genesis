@@ -1,15 +1,21 @@
 <?php
 /*
-Plugin Name: Widgets for Page Builder SiteOrigin and Genesis Framework
-Plugin URI: https://github.com/closemarketing/genesis-so-widgets
-Description: Widgets Page Builder SiteOrigin for Genesis Framework
-Author: closemarketing, davidperez, afortunato
-Author URI: https://www.closemarketing.es
-Version: 0.7
-Text Domain: widgets-so-genesis
-Domain Path: /languages
-License: GNU General Public License version 3.0
-License URI: http://www.gnu.org/licenses/gpl-3.0.html
+ * Plugin Name: Widgets for Genesis Framework
+ * Plugin URI: https://github.com/closemarketing/genesis-so-widgets
+ * Description: Widgets that you could need in your Genesis Framework web.
+ * Author: closemarketing, davidperez, afortunato
+ * Author URI: https://www.closemarketing.es
+ * Version: 0.8
+ * 
+ * Text Domain: widgets-so-genesis
+ * 
+ * Domain Path: /languages
+ * 
+ * WC requires at least: 2.2
+ * WC tested up to: 3.2
+ * 
+ * License: GNU General Public License version 3.0
+ * License URI: http://www.gnu.org/licenses/gpl-3.0.html
  */
 
 defined('ABSPATH') or exit;
@@ -44,5 +50,14 @@ require_once plugin_dir_path(__FILE__) . 'widgets/latestimgposts.php';
 //* Social Icons from Yoast
 require_once plugin_dir_path(__FILE__) . 'widgets/social-icons.php';
 
-//* WooCommerce Category with Images
-require_once plugin_dir_path(__FILE__) . 'widgets/woocatimg.php';
+/**
+ * Check if WooCommerce is active
+ **/
+if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+
+      //* WooCommerce Category with Images
+      require_once plugin_dir_path(__FILE__) . 'widgets/woocatimg.php';
+
+      //* WooCommerce Widget Product
+      require_once plugin_dir_path(__FILE__) . 'widgets/woofeatured.php';
+}
