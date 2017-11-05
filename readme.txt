@@ -1,4 +1,4 @@
-=== Widgets for Genesis ===
+=== Widgets for Genesis Framework ===
 Contributors: closemarketing, davidperez, afortunato
 Tags: genesis, widgets
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZYGC6AT5JFQVE
