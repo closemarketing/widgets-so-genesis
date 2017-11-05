@@ -1,8 +1,8 @@
 <?php
 /*
- * Plugin Name: Widgets for Page Builder SiteOrigin and Genesis Framework
+ * Plugin Name: Widgets for Genesis Framework
  * Plugin URI: https://github.com/closemarketing/genesis-so-widgets
- * Description: Widgets Page Builder SiteOrigin for Genesis Framework
+ * Description: Widgets that you could need in your Genesis Framework web.
  * Author: closemarketing, davidperez, afortunato
  * Author URI: https://www.closemarketing.es
  * Version: 0.8
@@ -12,7 +12,7 @@
  * Domain Path: /languages
  * 
  * WC requires at least: 2.2
- * WC tested up to: 3.3
+ * WC tested up to: 3.2
  * 
  * License: GNU General Public License version 3.0
  * License URI: http://www.gnu.org/licenses/gpl-3.0.html
