@@ -65,6 +65,7 @@ class widget_woofeat extends WP_Widget {
       extract( $args );
 
       // Widget starts to print information
+      $before_widget = str_replace('class="', 'class="woocommerce ', $before_widget);
       echo $before_widget;
 
       if(isset($instance['title']) ) $title = apply_filters('widget_title', $instance['title']); else $title = '';
