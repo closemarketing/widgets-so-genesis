@@ -46,3 +46,6 @@ require_once plugin_dir_path(__FILE__) . 'widgets/social-icons.php';
 
 //* WooCommerce Category with Images
 require_once plugin_dir_path(__FILE__) . 'widgets/woocatimg.php';
+
+//* WooCommerce Widget Product
+require_once plugin_dir_path(__FILE__) . 'widgets/woofeatured.php';
