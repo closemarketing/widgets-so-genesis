@@ -23,6 +23,13 @@ defined('ABSPATH') or exit;
 //Loads translation
 load_plugin_textdomain('widgets-so-genesis', false, dirname(plugin_basename(__FILE__)) . '/languages/');
 
+/* # Include Blocks
+---------------------------------------------------------------------------------------------------- */
+
+//* Contact Info
+require_once plugin_dir_path(__FILE__) . 'blocks/contactinfo/index.php';
+
+
 /* # Include Widgets
 ---------------------------------------------------------------------------------------------------- */
 
