@@ -27,7 +27,7 @@ load_plugin_textdomain('widgets-so-genesis', false, dirname(plugin_basename(__FI
 ---------------------------------------------------------------------------------------------------- */
 
 //* Contact Info
-require_once plugin_dir_path(__FILE__) . 'blocks/contactinfo/index.php';
+require_once plugin_dir_path(__FILE__) . 'blocks/contact-info/index.php';
 
 
 /* # Include Widgets
