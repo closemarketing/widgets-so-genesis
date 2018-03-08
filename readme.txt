@@ -4,8 +4,8 @@ Tags: genesis, widgets
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZYGC6AT5JFQVE
 Requires at least: 4.0
 Tested up to: 4.8.2
-Stable tag: 0.8
-Version: 0.8
+Stable tag: 0.9
+Version: 0.9
 
 Widgets that you could need in your Genesis Framework web.
 
@@ -50,6 +50,10 @@ WordPress installation and then activate the Plugin from Plugins page.
 [Official Repository Github](https://github.com/closemarketing/widgets-so-genesis)
 
 == Changelog ==
+
+= 0.9 =
+*   Custom class and Tripadvisor for social icons.
+*   Added category in latest posts.
 
 = 0.8 =
 *   Featured products for WooCommerce.
