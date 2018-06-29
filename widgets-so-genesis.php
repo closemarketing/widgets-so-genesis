@@ -3,9 +3,9 @@
  * Plugin Name: Widgets for Genesis Framework
  * Plugin URI: https://github.com/closemarketing/genesis-so-widgets
  * Description: Widgets that you could need in your Genesis Framework web.
- * Author: closemarketing, davidperez, afortunato
+ * Author: Closemarketing
  * Author URI: https://www.closemarketing.es
- * Version: 0.9
+ * Version: 0.9.1
  * 
  * Text Domain: widgets-so-genesis
  * 

@@ -1,5 +1,5 @@
 === Widgets for Genesis Framework ===
-Contributors: closemarketing, davidperez, afortunato
+Contributors: closemarketing, davidperez
 Tags: genesis, widgets
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZYGC6AT5JFQVE
 Requires at least: 4.0
@@ -50,6 +50,8 @@ WordPress installation and then activate the Plugin from Plugins page.
 [Official Repository Github](https://github.com/closemarketing/widgets-so-genesis)
 
 == Changelog ==
+= 0.9.1 =
+*   Fixed WooCommerce Images Widget and added option.
 
 = 0.9 =
 *   Custom class and Tripadvisor for social icons.
