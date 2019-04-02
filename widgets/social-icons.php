@@ -12,6 +12,19 @@
  * http://www.gnu.org/licenses/gpl-3.0.txt
  */
 
+/**
+ * Function that creates the widget
+ *
+ * @return void
+ */
+function widget_wsg_social() {
+	register_widget( 'WSG_Social' );
+}
+add_action( 'widgets_init', 'widget_wsg_social' );
+
+/**
+ * Class for the widget
+ */
 class WSG_Social extends WP_Widget {
 
 	function __construct() {
@@ -147,8 +160,3 @@ class WSG_Social extends WP_Widget {
 
 
 } //from class
-
-
-/** Register sidebars by running twentyten_widgets_init() on the widgets_init hook. */
-
-add_action( 'widgets_init', create_function( '', 'register_widget( "WSG_Social" );' ) );
