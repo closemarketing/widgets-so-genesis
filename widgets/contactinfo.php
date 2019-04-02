@@ -12,6 +12,19 @@
  * http://www.gnu.org/licenses/gpl-3.0.txt
  */
 
+/**
+ * Function that creates the widget
+ *
+ * @return void
+ */
+function widget_wsg_contactinfo() {
+	register_widget( 'WSG_Contact_Info' );
+}
+add_action( 'widgets_init', 'widget_wsg_contactinfo' );
+
+/**
+ * Class for the widget
+ */
 class WSG_Contact_Info extends WP_Widget {
 
 	function __construct() {
@@ -157,6 +170,3 @@ echo $after_widget;
 }
 }
 
-/** Register sidebars by running twentyten_widgets_init() on the widgets_init hook. */
-
-add_action('widgets_init', create_function('', 'register_widget( "WSG_Contact_Info" );'));
