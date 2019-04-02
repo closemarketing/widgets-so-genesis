@@ -5,14 +5,11 @@
  * Description: Widgets that you could need in your Genesis Framework web.
  * Author: Closemarketing
  * Author URI: https://www.closemarketing.es
- * Version: 0.9.1
+ * Version: 1.0
  *
  * Text Domain: widgets-so-genesis
  *
  * Domain Path: /languages
- *
- * WC requires at least: 2.2
- * WC tested up to: 3.2
  *
  * @package WordPress
  *
