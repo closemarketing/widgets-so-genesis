@@ -3,9 +3,9 @@ Contributors: closemarketing, davidperez
 Tags: genesis, widgets
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZYGC6AT5JFQVE
 Requires at least: 4.0
-Tested up to: 4.8.2
-Stable tag: 0.9
-Version: 0.9
+Tested up to: 5.1
+Stable tag: 1.0
+Version: 1.0
 
 Widgets that you could need in your Genesis Framework web.
 
@@ -50,6 +50,10 @@ WordPress installation and then activate the Plugin from Plugins page.
 [Official Repository Github](https://github.com/closemarketing/widgets-so-genesis)
 
 == Changelog ==
+= 1.0 =
+*   PHP Coding standards.
+*   Solved errors since PHP 7.2.
+
 = 0.9.1 =
 *   Fixed WooCommerce Images Widget and added option.
 
