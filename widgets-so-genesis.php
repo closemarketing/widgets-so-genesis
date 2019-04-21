@@ -5,7 +5,7 @@
  * Description: Widgets that you could need in your Genesis Framework web.
  * Author: Closemarketing
  * Author URI: https://www.closemarketing.es
- * Version: 1.0
+ * Version: 1.1
  *
  * Text Domain: widgets-so-genesis
  *
